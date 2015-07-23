@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- _track -->
+
+
+<openerp>
+	<data>
+		<record id="subtype_draft_xml" model="mail.message.subtype">
+			<field name="name">Draft</field>
+			<field name="res_model">student.info.student</field>
+			<field name="default" eval="True" />
+			<field name="description">The issue has been created.</field>
+		</record>
+		<record id="subtype_trash_xml" model="mail.message.subtype">
+			<field name="name">Trashed</field>
+			<field name="res_model">student.info.student</field>
+			<field name="default" eval="False" />
+			<field name="description">The issue has been closed.</field>
+		</record>
+
+	</data>
+</openerp>
+
+

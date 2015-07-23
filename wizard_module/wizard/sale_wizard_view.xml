@@ -1,0 +1,31 @@
+<openerp>
+	<data>
+		<record id="sale_wizard" model="ir.ui.view">
+			<field name="name">sale wizard</field>
+			<field name="model">sale.wizard</field>
+			<field name="arch" type="xml">
+				<form string="Change Quantity" version="7.0">
+					<group>
+						<field name="product_line_ids" style='width:80%%' />
+						<field name="qty" style='width:80%%' />
+					</group>
+<!-- 					<field name="product_info" string="Qty to update" nolabel="1"
+						colspan="4" widget="many2many_list" readonly="1">
+						<tree string="Products" create="0" delete="0" colors="red:used_line"
+							class="grid_order_tree_view_field_width">
+							<field name="product_id" readonly="1" />
+							<field name="qty" readonly="1" />
+						</tree>
+					</field> -->
+					<footer>
+						<button name="update_order_lines" string="Process" type="object"
+							class="oe_highlight" icon="gtk-execute" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+
+
+	</data>
+</openerp>

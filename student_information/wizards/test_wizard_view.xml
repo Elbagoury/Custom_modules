@@ -1,0 +1,33 @@
+<openerp>
+	<data>
+		<record id="test_wizard" model="ir.ui.view">
+			<field name="name">Test Wizard</field>
+			<field name="model">test.wizard</field>
+			<field name="arch" type="xml">
+				<form string="Test Wizards" version="7.0">
+				<header>
+				<button name="ok_butt"  string="Purchase" type="object" />
+				<button name="cancel_butt"  string="Cancel" type="object" />
+				</header>
+					<sheet>
+						<center>
+							<label string="Calculate Total" name="Total" />
+						</center>
+						<group>
+							<field name="s1" />
+							<field name="s2" />
+							<field name="s3" />
+							<field name="s4" />
+							<field name="s5" />
+						</group>
+						<footer>
+							<button name="test_ok" string="print" type="object" class="oe_highlight"
+								icon="gtk-execute" />
+						</footer>
+					</sheet>
+
+				</form>
+			</field>
+		</record>
+	</data>
+</openerp>

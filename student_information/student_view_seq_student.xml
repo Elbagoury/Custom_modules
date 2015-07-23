@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Sequence generation -->
+
+<openerp>
+	<data noupdate="1">
+
+
+		<record id="seq_type_id_stud" model="ir.sequence.type">
+			<field name="name">Student Register Number</field>
+			<field name="code">reg_num</field>
+		</record>
+
+		<record id="seq_id_stud" model="ir.sequence">
+			<field name="name">Student Register Number</field>
+			<field name="code">reg_num</field>
+			<field name="prefix">ST / </field>
+			<field name="padding">5</field>
+			<field name="reg_no" eval="False" />
+
+		</record>
+
+	</data>
+</openerp>

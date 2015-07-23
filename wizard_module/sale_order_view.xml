@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record id="action_change_qty_in_sale" model="ir.actions.act_window">
+			<field name="name">Sale Wizard</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">sale.wizard</field>
+			<field name="src_model">sale.order</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+			<field name="context">{'order_id': active_id}</field>
+		</record>
+
+		<record model="ir.ui.view" id="sale_view_order_form_inherit">
+			<field name="name">sale.order.form.sodanca</field>
+			<field name="model">sale.order</field>
+			<field name="inherit_id" ref="sale.view_order_form" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='order_line']" position="before">
+					<!-- <button name="%(action_change_qty_in_sale)d" string="Change Quantity" 
+						type="action" class="oe_highlight" context="{'order_id':active_id}" attrs="{'invisible': 
+						[('state','not in',('draft','sent'))]}"/> -->
+					<button name="action_change_line_qty" string="Change Quantity"
+						type="object" class="oe_highlight" context="{'order_id':active_id}"
+						attrs="{'invisible': [('state','not in',('draft','sent'))]}" />
+				</xpath>
+			</field>
+		</record>
+	</data>
+</openerp>
