@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Wizard inside wizard testing -->
+
+<openerp>
+	<data>
+
+		<record model="ir.ui.view" id="wizard_test_inside_form_view">
+			<field name="name">Wizard_test_inside.form</field>
+			<field name="model">test.wizard.inside</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="form_string" version="7.0">
+					<header>
+						<button name="wizard_inside_test" string="TEST ONE" type="object"
+							icon="STOCK_PRINT" />
+					</header>
+					<sheet>
+						<group>
+							<field name="name" />
+							<field name="remarks" />
+							
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+	</data>
+</openerp>
