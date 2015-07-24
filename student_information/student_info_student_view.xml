@@ -107,8 +107,7 @@
 			<field name="model">student.info.student</field>
 			<field name="type">tree</field>
 			<field name="arch" type="xml">
-				<tree string="Student Tree" colors="green:state=='draft';red:state=='trashed'"
-					editable="bottom">
+				<tree string="Student Tree" colors="green:state=='draft';red:state=='trashed'">
 					<field name="name" string="Name" />
 					<field name="fname" string="Father Name" />
 					<field name="mname" string="Mother Name" />

@@ -5,10 +5,10 @@
 			<field name="model">test.wizard</field>
 			<field name="arch" type="xml">
 				<form string="Test Wizards" version="7.0">
-				<header>
-				<button name="ok_butt"  string="Purchase" type="object" />
-				<button name="cancel_butt"  string="Cancel" type="object" />
-				</header>
+					<header>
+						<button name="ok_butt" string="Purchase" type="object" />
+						<button name="cancel_butt" string="Cancel" type="object" />
+					</header>
 					<sheet>
 						<center>
 							<label string="Calculate Total" name="Total" />
@@ -20,9 +20,29 @@
 							<field name="s4" />
 							<field name="s5" />
 						</group>
+						<notebook>
+							<page string="Students">
+								<field name="student_ids">
+									<form string="Student Lines" version="7.0">
+										<group>
+											<field name="name" />
+											<button name="confirm" string="Confirm" class="oe_highlight"
+												icon="gtk-execute" clickable="True" disabled = "False"/>
+										</group>
+									</form>
+									<tree string="Student lines">
+										<field name="name" />
+										<button name="confirm" string="Confirm" class="oe_highlight"
+											icon="gtk-execute" clickable="True"/>
+									</tree>
+								</field>
+							</page>
+						</notebook>
 						<footer>
 							<button name="test_ok" string="print" type="object" class="oe_highlight"
 								icon="gtk-execute" />
+							<button name="wizard_inside_test_method" string="Inside" type="object"
+								class="oe_highlight" />
 						</footer>
 					</sheet>
 

@@ -4,3 +4,5 @@ import student_info_classroom
 import student_info_student_mothertongue
 import student_Ginfo_student
 import wizards
+import student_marks_student
+import wizard_inside

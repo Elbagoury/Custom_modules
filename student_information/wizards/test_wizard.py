@@ -11,6 +11,7 @@ class test_wizard(orm.TransientModel):
               's4':fields.integer("Science"),
               's5':fields.integer("Social"),
               'result':fields.char(),
+              'student_ids':fields.one2many("student.mark","name",String="Student Info")
               
               }
     
@@ -74,4 +75,21 @@ class test_wizard(orm.TransientModel):
     def cancel_butt(self,cr,uid,ids,context=None):
         print "Purchase canceled"
         return True
+    
+    def wizard_inside_test_method(self,cr,uid,ids,context=None):
+        mod_obj=self.pool.get('ir.model.data')
+        view_id=mod_obj.get_object_reference(cr,uid,'student_information','wizard_test_inside_form_view')
+        return {
+                'name' : "Wizard_Inside_wizard Test",
+                'view_type':'form',
+                'view_mode':'form',
+                'view_id':view_id and view_id[1] or False,
+                'res_model':'test.wizard.inside',
+                'src_model':'test.wizard',
+                'type':'ir.actions.act_window',
+                'context':context,
+                'target':'new',
+                }
+        
+        
                     
