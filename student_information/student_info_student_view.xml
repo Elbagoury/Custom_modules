@@ -18,6 +18,7 @@
 							icon="terp-folder-orange" class="oe_no_button" />
 						<field name="state" widget="statusbar" statusbar_visible="draft,trashed"
 							statusbar_colors='{"draft":"red"}' clickable="True" />
+							<button name="google" string="Google" type="object"/>
 					</header>
 					<sheet>
 						<group colspan="2" col="2">

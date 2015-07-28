@@ -9,3 +9,5 @@ class student_marks(orm.Model):
               'name':fields.many2one("student.info.student"),
               
               }
+    
+   

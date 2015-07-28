@@ -10,6 +10,9 @@
 			<field name="type">form</field>
 			<field name="arch" type="xml">
 				<form string="Room Details" version="7.0">
+				<header>
+				<button name="fields_view_get" string="Test" type="object" />
+				</header>
 					<sheet>
 						<group>
 							<h1>

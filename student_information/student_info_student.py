@@ -27,6 +27,17 @@ class student_info_student(orm.Model):
                 'context':context,
                 'target':'new',
                 }
+    def google(self,cr,uid,ids,context=None):
+#         res=self.read(cr,uid,ids,['s_img'],context=context)
+        return{
+#                'type':'ir.actions.act_url',
+#                'url':'https://www.google.com',
+#                'target':'new',
+                "type": "ir.actions.client",
+                "tag": "reload"
+
+               }
+        
     
     _columns = {
         'name':fields.char("Name", size=30, required=True),

@@ -20,23 +20,23 @@ class sale_wizard(orm.TransientModel):
         return True
 
 
-#     def fields_view_get(self, cr, uid, view_id=None, view_type=False, context=None, toolbar=False, submenu=False):
-#         if context is None:
-#             context = {}
-#         res = super(sale_wizard, self).fields_view_get(cr, uid, view_id=view_id, view_type=view_type, context=context, toolbar=toolbar, submenu=submenu)
-#         doc = etree.XML(res['arch'])
-#         method_nodes = doc.xpath("//form/group/field[@name='product_line_ids']")
-#         order_id = context.get('order_id')
-#         order_lines = self.pool.get('sale.order').browse(cr, uid, order_id, context=None)
-#         product_ids = []
-#         if order_lines:
-#             order_lines=order_lines.order_line
-#             for order_line in order_lines:
-#                 product_ids.append(order_line.product_id.id)
-#         for node in method_nodes:
-#             node.set('domain', "[('id', 'in', " + str(product_ids) + ")]")
-#         res['arch'] = etree.tostring(doc)
-#         return res
+    def fields_view_get(self, cr, uid, view_id=None, view_type=False, context=None, toolbar=False, submenu=False):
+        if context is None:
+            context = {}
+        res = super(sale_wizard, self).fields_view_get(cr, uid, view_id=view_id, view_type=view_type, context=context, toolbar=toolbar, submenu=submenu)
+        doc = etree.XML(res['arch'])
+        method_nodes = doc.xpath("//form/group/field[@name='product_line_ids']")
+        order_id = context.get('order_id')
+        order_lines = self.pool.get('sale.order').browse(cr, uid, order_id, context=None)
+        product_ids = []
+        if order_lines:
+            order_lines=order_lines.order_line
+            for order_line in order_lines:
+                product_ids.append(order_line.product_id.id)
+        for node in method_nodes:
+            node.set('domain', "[('id', 'in', " + str(product_ids) + ")]")
+        res['arch'] = etree.tostring(doc)
+        return res
     
      
 # class  product_qty_selection(orm.TransientModel):
